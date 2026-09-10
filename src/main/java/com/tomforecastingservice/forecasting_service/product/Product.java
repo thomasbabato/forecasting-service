@@ -4,6 +4,7 @@ package com.tomforecastingservice.forecasting_service.product;
 import com.tomforecastingservice.forecasting_service.auth.User;
 import com.tomforecastingservice.forecasting_service.restaurant.Restaurant;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -28,6 +29,7 @@ public class Product {
     private BigDecimal unitPrice;
 
     @Column(name = "created_at")
+    @CreationTimestamp
     private Instant createdAt;
 
 

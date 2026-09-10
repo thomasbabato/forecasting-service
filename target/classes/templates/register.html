@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <h2>Forecasting Tool</h2>
+                <button th:href="@{/home}" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        <a th:href="@{/login}" class="btn btn-link">Login</a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5" style="max-width: 400px;">
+        <h2 class="mb-4">Create your account</h2>
+        <form th:action="@{/register}" method="post">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Restaurant name</label>
+                <input type="text" name="restaurantName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Restaurant timezone</label>
+                <input type="text" name="restaurantTimeZone" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+    </main>
+</body>
+</html>

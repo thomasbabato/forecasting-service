@@ -2,6 +2,7 @@ package com.tomforecastingservice.forecasting_service.forecast;
 
 import com.tomforecastingservice.forecasting_service.product.Product;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -26,6 +27,7 @@ public class Forecast {
     private BigDecimal predictedQuantity;
 
     @Column(name = "generated_at")
+    @CreationTimestamp
     private Instant generatedAt;
 
 
