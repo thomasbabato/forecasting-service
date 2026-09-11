@@ -18,6 +18,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/","/login","/css/**","/webjars/**","/favicon.ico","/register").permitAll()
                         .anyRequest().authenticated()
+                )
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/app/dashboard", true)
+                        .permitAll()
                 );
         return http.build();
     }
