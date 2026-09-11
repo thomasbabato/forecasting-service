@@ -1,6 +1,7 @@
 package com.tomforecastingservice.forecasting_service.auth;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 
@@ -17,7 +18,13 @@ public class User {
     @Column(name = "password_hash")
     private String passwordHash;
 
+
+    /*
+    The CreationTimeStamp is necessary because I don't want to remember every fk time to add it in the service layer.
+    In this way It gets added automatically and it avoids a Postgres error (since there the not null rule is enforced)
+     */
     @Column(name = "created_at")
+    @CreationTimestamp
     private Instant createdAt;
 
 

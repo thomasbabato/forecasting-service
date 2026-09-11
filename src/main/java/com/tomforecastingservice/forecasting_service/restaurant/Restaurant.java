@@ -2,6 +2,7 @@ package com.tomforecastingservice.forecasting_service.restaurant;
 
 import com.tomforecastingservice.forecasting_service.auth.User;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 
@@ -21,6 +22,7 @@ public class Restaurant {
     private String timezone;
 
     @Column(name = "created_at")
+    @CreationTimestamp
     private Instant createdAt;
 
 
